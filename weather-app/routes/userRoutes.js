@@ -27,7 +27,15 @@ router.put('/users/:email', async (req, res) => {
 router.get('/weather/:email/:date', async (req, res) => {
   const { email, date } = req.params;
   const user = await User.findOne({ email });
+  if (!user) {
+    return res.status(404).json({ message: 'User not found' });
+  }
+
   const weatherData = user.weatherData.filter(data => data.date.toISOString().split('T')[0] === date);
+  if (weatherData.length === 0) {
+    return res.status(404).json({ message: 'No weather data found for the specified date' });
+  }
+
   res.json(weatherData);
 });
 
