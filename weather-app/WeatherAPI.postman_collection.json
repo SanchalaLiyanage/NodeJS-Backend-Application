@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "0c386dfd-d53f-4fbc-b1de-1e1abe554708",
+		"name": "WeatherAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36983116"
+	},
+	"item": [
+		{
+			"name": "Add a User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"sanchala818@gmail.com\",\r\n  \"lat\": 40.7128,\r\n  \"lon\": -74.0060\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Location",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"lat\": 34.0522,\r\n  \"lon\": -118.2437\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/user@example4.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"user@example4.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Weather Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/weather/sanchala818@gmail.com/2025-02-17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"weather",
+						"sanchala818@gmail.com",
+						"2025-02-17"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
